@@ -1,6 +1,6 @@
 plugins {
-    kotlin("jvm") version "1.9.25"
-    kotlin("plugin.spring") version "1.9.25"
+    kotlin("jvm") version "2.1.0"
+    kotlin("plugin.spring") version "2.1.0"
     id("org.springframework.boot") version "3.4.1"
     id("io.spring.dependency-management") version "1.1.7"
     id("org.graalvm.buildtools.native") version "0.10.4"
@@ -11,7 +11,7 @@ version = "0.0.1-SNAPSHOT"
 
 java {
     toolchain {
-        languageVersion = JavaLanguageVersion.of(21)
+        languageVersion = JavaLanguageVersion.of(23)
     }
 }
 
@@ -37,3 +37,13 @@ kotlin {
 tasks.withType<Test> {
     useJUnitPlatform()
 }
+
+//graalvmNative {
+//    binaries {
+//        all {
+//            buildArgs.add("--target=linux-aarch64")
+//            buildArgs.add("-H:-CheckToolchain")
+//
+//        }
+//    }
+//}
